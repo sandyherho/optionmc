@@ -66,30 +66,67 @@ optionmc price --output-dir my_results
 
 ## Mathematical Background
 
-### Black-Scholes Option Pricing
+### Black-Scholes Option Pricing: Derivation and Implementation
 
-The Black-Scholes model provides analytical solutions for European options, assuming:
-- Lognormal distribution of stock prices
-- Constant volatility and risk-free rate
-- No transaction costs or dividends
-- Continuous trading
+The Black-Scholes model provides analytical solutions for European options based on a partial differential equation approach. This package implements the closed-form solution as a benchmark for Monte Carlo simulations.
 
-For a European call option, the Black-Scholes formula is:
+#### Derivation Overview
 
-$$C = S_0 N(d_1) - Ke^{-rT} N(d_2)$$
+The derivation starts with several key assumptions:
+- Stock prices follow geometric Brownian motion
+- Markets are frictionless with no arbitrage opportunities
+- Volatility and risk-free rate remain constant
+- Trading occurs continuously
+- No dividends are paid during the option's life
+
+Under these assumptions, the stock price follows the stochastic differential equation:
+
+$dS_t = \mu S_t dt + \sigma S_t dW_t$
+
+Where $W_t$ is a Wiener process (Brownian motion), $\mu$ is the drift, and $\sigma$ is the volatility.
+
+The Black-Scholes partial differential equation is:
+
+$\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + rS\frac{\partial V}{\partial S} - rV = 0$
+
+Solving this equation with appropriate boundary conditions yields the closed-form solutions:
+
+For a European call option:
+
+$C = S_0 \Phi(d_1) - Ke^{-rT} \Phi(d_2)$
 
 For a European put option:
 
-$$P = Ke^{-rT} N(-d_2) - S_0 N(-d_1)$$
+$P = Ke^{-rT} \Phi(-d_2) - S_0 \Phi(-d_1)$
 
 Where:
 - $S_0$ is the initial stock price
 - $K$ is the strike price
 - $r$ is the risk-free rate
 - $T$ is the time to maturity (in years)
-- $N(\cdot)$ is the cumulative distribution function of the standard normal distribution
+- $\Phi(\cdot)$ is the cumulative distribution function of the standard normal distribution
 - $d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}$
 - $d_2 = d_1 - \sigma\sqrt{T}$
+
+#### Why Use the Analytical Solution?
+
+This package implements both Monte Carlo simulation and the analytical Black-Scholes solution for several reasons:
+
+1. **Benchmarking**: The analytical solution provides a precise benchmark to validate the accuracy of Monte Carlo simulations
+2. **Educational Value**: Comparing both methods helps users understand the trade-offs between analytical and numerical approaches
+3. **Efficiency**: For standard European options, the analytical solution is computationally more efficient
+4. **Error Analysis**: Having an exact solution allows for precise error measurements in the Monte Carlo implementation
+
+#### Limitations of the Black-Scholes Model
+
+Despite its elegance, the Black-Scholes model has several limitations:
+
+1. **Constant Volatility**: Assumes volatility remains constant throughout the option's life, contradicting observed "volatility smiles" in markets
+2. **Log-normal Distribution**: Assumes returns follow a normal distribution, which often understates the probability of extreme market moves
+3. **Continuous Trading**: Assumes continuous hedging with no transaction costs, which is impractical in real markets
+4. **Constant Interest Rates**: Assumes risk-free rates remain fixed, which may not hold for longer-dated options
+5. **No Early Exercise**: Only applies to European options, not American options that allow early exercise
+6. **No Dividends**: The basic model doesn't account for dividend payments (though extensions exist)
 
 ### Monte Carlo Simulation
 
@@ -126,6 +163,8 @@ This package implements the **antithetic variates** technique, which:
 
 ## Limitations and Considerations
 
+### Monte Carlo Simulation Limitations
+
 While powerful, the Monte Carlo approach has several limitations to consider:
 
 1. **Computational Intensity**: Requires many iterations for accurate results, especially for:
@@ -148,10 +187,35 @@ While powerful, the Monte Carlo approach has several limitations to consider:
    - Numerical precision issues with very small probabilities
    - Not suitable for real-time pricing without optimizations
 
-5. **Alternative Methods**: For European options, consider:
-   - Analytical solutions (Black-Scholes) when available
-   - Binomial/trinomial trees for smaller problems
-   - Finite difference methods for some exotic options
+### Package-Specific Limitations
+
+The current implementation of OptionMC has several limitations:
+
+1. **European Options Only**: Limited to European-style options; does not support American or exotic options
+2. **Single-Factor Models**: Only models stock price as the underlying stochastic process
+3. **Basic Variance Reduction**: Implements antithetic variates but not other techniques like control variates or importance sampling
+4. **No Path-Dependent Features**: Cannot handle path-dependent options like Asian options or barrier options
+5. **No Dividend Support**: Current implementation does not account for dividend payments
+
+### When to Use Alternative Methods
+
+For certain option pricing scenarios, consider alternatives:
+
+1. **Analytical Solutions**: 
+   - Black-Scholes for standard European options (faster and more accurate)
+   - Closed-form extensions for simple dividend models or barrier options
+
+2. **Lattice Methods**:
+   - Binomial/trinomial trees for American options with early exercise
+   - Better for visualizing the evolution of option prices over time
+
+3. **Finite Difference Methods**:
+   - For solving complex PDEs associated with exotic options
+   - Often more efficient than Monte Carlo for low-dimensional problems
+
+4. **Fourier Transform Methods**:
+   - For options with known characteristic functions
+   - Often more efficient for certain exotic options
 
 ## Contributing
 
@@ -175,14 +239,14 @@ Sandy Herho (sandy.herho@email.ucr.edu)
 
 If you use this package in your research, please cite it as:
 
-```
+```latex
 @article{herho2025optionmc,
   author       = {Herho, Sandy},
   title        = {{OptionMC}: {A} {Python} package for {Monte} {Carlo} option pricing},
-  journal      = {xxxx},
-  year         = {2025},
-  volume       = {xxx},
-  number       = {xxx},
+  journal      = {xxx},
+  year         = {xxx},
+  volume       = {xx},
+  number       = {xx},
   pages        = {xxx},
   doi          = {10.5281/zenodo.15099722},
   url          = {https://doi.org/10.5281/zenodo.15099722}
