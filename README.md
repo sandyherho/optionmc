@@ -2,7 +2,6 @@
 
 
 [![PyPI version](https://img.shields.io/pypi/v/optionmc.svg)](https://pypi.org/project/optionmc/)
-[![Tests](https://github.com/sandyherho/optionmc/actions/workflows/test.yml/badge.svg)](https://github.com/sandyherho/optionmc/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/956375821.svg)](https://doi.org/10.5281/zenodo.15099722)
 
