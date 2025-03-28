@@ -7,7 +7,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="optionmc",
-    version="0.1.3.1",
+    version="0.1.3.2",
     packages=find_packages(),
     install_requires=[
         "numpy>=1.20.0",
