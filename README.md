@@ -2,6 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/optionmc.svg)](https://pypi.org/project/optionmc/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/956375821.svg)](https://doi.org/10.5281/zenodo.15099722)
 
 A Python package for pricing European options using Monte Carlo simulation, featuring variance reduction techniques and educational visualizations.
 
