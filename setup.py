@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="optionmc",
-    version="0.1.2",
+    version="0.1.3",
     packages=find_packages(),
     install_requires=[
         "numpy>=1.20.0",
@@ -18,11 +18,11 @@ setup(
     },
     author="Sandy Herho",
     author_email="sandy.herho@email.ucr.edu",
-    description="Monte Carlo Option Pricing with Educational Visualizations",
+    description="Monte Carlo Option Pricing for Educational Purposes",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/sandyherho/optionmc",
-    license="WTFPL",
+    license="MIT",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Education",
