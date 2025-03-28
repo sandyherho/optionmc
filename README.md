@@ -2,10 +2,8 @@
 
 
 [![PyPI version](https://img.shields.io/pypi/v/optionmc.svg)](https://pypi.org/project/optionmc/)
-[![Tests](https://github.com/yourusername/optionmc/actions/workflows/test.yml/badge.svg)](https://github.com/yourusername/optionmc/actions/workflows/test.yml)
-[![Python Version](https://img.shields.io/pypi/pyversions/optionmc)](https://pypi.org/project/optionmc/)
+[![Tests](https://github.com/yourusername/optionmc/actions/workflows/test.yml/badge.svg)](https://github.com/sandyherho/optionmc/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://static.pepy.tech/badge/optionmc)](https://pepy.tech/project/optionmc)
 [![DOI](https://zenodo.org/badge/956375821.svg)](https://doi.org/10.5281/zenodo.15099722)
 
 A Python package for pricing European options using Monte Carlo simulation, featuring variance reduction techniques and educational visualizations.
