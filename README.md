@@ -1,6 +1,6 @@
 # OptionMC: Monte Carlo Option Pricing
 
-[![PyPI version](https://badge.fury.io/py/optionmc.svg)](https://badge.fury.io/py/optionmc)
+[![PyPI version](https://img.shields.io/pypi/v/optionmc.svg)](https://pypi.org/project/optionmc/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Python package for pricing European options using Monte Carlo simulation, featuring variance reduction techniques and educational visualizations.
