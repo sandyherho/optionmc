@@ -242,15 +242,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 If you use this package in your research, please cite it as:
 
 ```latex
-@article{herho2025optionmc,
-  author       = {Herho, S. H. S. and Kaban, S. N. K and Nugraha, C.},
-  title        = {{OptionMC}: {A} {P}ython package for {M}onte {C}arlo pricing of {E}uropean options},
-  journal      = {xxx},
-  year         = {xxx},
-  volume       = {xx},
-  number       = {xx},
-  pages        = {xxx},
-  doi          = {10.5281/zenodo.15099722},
-  url          = {https://doi.org/10.5281/zenodo.15099722}
+@misc{herho2025optionmc,
+  author = {Herho, S and Kaban, S and Nugraha, C},
+  title = {OptionMC: A Python package for Monte Carlo pricing of European options},
+  howpublished = {Available at SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5224853}},
+  year = {2025},
+  note = {Accessed: January 10, 2025}
 }
 ```
