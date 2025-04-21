@@ -231,9 +231,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Author
+## Authors
 
-Sandy Herho (sandy.herho@email.ucr.edu)
+- Sandy H. S. Herho <sandy.herho@email.ucr.edu>
+- Siti N. Kaban
+- Cahya Nugraha
 
 ## Citation
 
@@ -241,8 +243,8 @@ If you use this package in your research, please cite it as:
 
 ```latex
 @article{herho2025optionmc,
-  author       = {Herho, Sandy},
-  title        = {{OptionMC}: {A} {Python} package for {Monte} {Carlo} option pricing},
+  author       = {Herho, S. H. S. and Kaban, S. N. K and Nugraha, C.},
+  title        = {{OptionMC}: {A} {P}ython package for {M}onte {C}arlo pricing of {E}uropean options},
   journal      = {xxx},
   year         = {xxx},
   volume       = {xx},
